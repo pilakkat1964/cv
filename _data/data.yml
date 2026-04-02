@@ -216,6 +216,9 @@ skills:
     - name: C/C++/Python
       level: 85%
 
+    - name: Rust/Java/JavaScript
+      level: 65%
+
 footer:
 #
 #footer: >
