@@ -72,7 +72,7 @@ education:
 experiences:
   title: Professional Experience
   info:
-    - role: Senior Principal Research Engineer (RTS7)
+    - role: Senior Principal Research Engineer
       time: July 2000 - March 2025
       company: Institute for Infocomm Research (I2R), A*STAR, Singapore
       details: |
@@ -92,16 +92,23 @@ experiences:
       time: Dec 1995 - July 2000
       company: Motorola Electronics Pte. Ltd, Singapore (Global Software Division / Corporate Research & Technology Centre)
       details: |
-        - **Cdma2000 1x Trial System (System Architect):** One of three system architects for a technology demonstrator for Sprint PCS Inc. Defined system feature set, high-level architecture, and interface control documents.
+        - **Cdma2000 1x Trial System (System Architect):** One of three system architects for a technology demonstrator for Sprint PCS inc. Defined system feature set, high-level architecture, and interface control documents.
         - **Cdma2000 1x Trial System BTS (Technical Lead):** Technical lead for BTS subsystems developed in Singapore.
         - **Onyx V42bis Library:** Developed an assembly-optimized V42bis compression library for Motorola 56300 DSP.
         - **FLEX & POCSAG Pager Prototypes:** Developed complete hardware/software prototypes using HC11 MCU.
-
+        - **Software Quality & Systems Engineering:** As part of the first CMMI Level 5 qualified team in Singapore, developed deep understanding of the Software development lifecycle at the highest maturity level. Developed comprehensive test automation solution for automated test execution and coverage analysis for the hand optimised DSP assembly libraries.
+        
+    - role: R&D Engineer
+      time: Dec 1993 - Dec 1995
+      company: PCI Pte. Ltd., Singapore
+      details: |
+        - **GSM Handset Development:** As part of software team, developed SIM handling software subsystem for Singapore's first GSM R&D project. As part of the Systems Engineering team, working with ADI & TTP Ltd., helped in fleshing out the design and testing approaches for the handset prototype. Developed a POCASAG page virtual platform based on Visual Basic to help accelerate the development of pager product line in a parallel effort. 
+        
     - role: Engineer Executive
       time: Sept 1988 - Dec 1993
       company: Indian Telephone Industries Ltd. (ITI), Bangalore, India (Switching R&D)
       details: |
-        - **LDBX-2048 (Large Digital Branch Exchange):** Developed custom RTOS (REALX-86), HDLC protocol, main call processing software, and implemented a 1+1 Hot Standby Redundancy Scheme with zero call loss on fail-over.
+        - **Large Digital Branch Exchange:** Developed custom RTOS (REALX-86), HDLC protocol implementation, main call processing software, HDLC Serial communication hardware and implemented a 1+1 Hot Standby Redundancy Scheme with zero call loss on fail-over.
 
     - role: Scientific Officer - SC
       time: Dec 1986 - Sept 1988
@@ -124,7 +131,7 @@ certifications:
         Awarded for the paper "Reconfigurable Signal Processing and hardware Architecture for Broadband Wireless Communications" in the Journal on Wireless Communications and Networking, Volume 2005.
 
 projects:
-  title: Key Projects
+  title: Key Projects @ A*STAR
   intro: |
     Selected projects from A*STAR and industry engagements, focusing on SDR, IIoT, and secure communications.
   assignments:
@@ -147,26 +154,30 @@ projects:
     - title: Multi-mode SDR Terminal
       link:
       tagline: "Led team of 16 engineers (I2R, with Defense collaborator) to develop multi-mode terminal (WCDMA + 802.11a). Employed MDD/MDA with Rhapsody UML2 and Telelogic SDT."
-
+      
+  title: Key Projects @ Motorola
+  intro: |
+    Selected projects from Motorola, CRTC/GSD an in-house competency center for high maturity software development.
+  assignments:
     - title: Cdma2000 1x Trial System
       link:
-      tagline: "Part of the 3 member, corporate-wide System Architecture for Motorola's Cdma2000-1X technology demonstrator and for trial with Sprint PCS Inc. Coordinated a global team to define system architecture and feature set at coorporate headquarters."
+      tagline: "Part of the 3 member, corporate-wide System Architecture for Motorola's Cdma2000-1X technology demonstrator and for trial with Sprint PCS Inc. Coordinated a global team to define system architecture and feature set; deputed to Cellular Infrastructure Group headquarters at Arlington Heights, Chicago."
 
 oss:
   title: Technical Expertise
   intro: |
-    Core competencies in systems architecture, embedded systems, and wireless communications.
+    Core competencies in systems architecture, embedded systems, and wireless & wireline communications.
   contributions:
     - title: System Architecture & MBSE
       tagline: "INCOSE SysML/UML, IBM Rhapsody, Sparx Enterprise Architect, Model-Driven Development (MDD)"
     - title: Wireless Comms & SDR
       tagline: "5G, LTE, WCDMA, CDMA2000, OFDM, Private 5G, TSN over 5G, Adaptive Modulation, AES256, JTRS SCA"
     - title: FPGA & Embedded Systems
-      tagline: "Xilinx Zynq/UltraScale/Virtex, VHDL/Verilog/CHISEL, Partial Reconfiguration, PCIe, AXI DMA"
+      tagline: "Xilinx Zynq/UltraScale/Virtex, VHDL/Verilog/SystemC, Partial Reconfiguration, PCIe, AXI DMA, Verification"
     - title: IIoT & Smart Manufacturing
       tagline: "RAMI 4.0, IIC IIRA, Private LTE, Time-Sensitive Networking (TSN), Industrial Analytics"
     - title: Software & OS
-      tagline: "Embedded Linux, RTOS (VxWorks, FreeRTOS), Kernel/Driver Development, C/C++, Python, OpenCL"
+      tagline: "Embedded Linux, RTOS (VxWorks, FreeRTOS, Custom), Kernel/Driver Development, C/C++, Python, Rust"
 
 publications:
   title: Publications
