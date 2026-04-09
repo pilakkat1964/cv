@@ -30,6 +30,11 @@ compress_html: # - http://jch.penibelst.de/
   ignore:
     envs: development
 
+exclude:
+  - README.md
+  - LICENSE
+  - mise.toml
+
 # Development Settings
 port: 4000
 host: 0.0.0.0
