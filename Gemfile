@@ -5,6 +5,7 @@ ruby "3.4.9"
 # gem "rails"
 gem "jekyll", "~> 4.3.0"
 gem 'webrick'
+gem 'csv'
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.17"
