@@ -18,7 +18,7 @@ sidebar:
   timezone: Asia/Singapore
   citizenship: Singapore
   website: https://pilakkat.mywire.org
-  linkedin: pilakkat
+  linkedin: santhosh-kumar-pilakkat-26858117
   xing:
   github: pilakkat1964
   telegram: # add your nickname without '@' sign
@@ -43,17 +43,29 @@ sidebar:
         level: Native
 
   interests:
-    title: Interests
+    title: Engagement Models
     info:
-      - item: DIY (Electronics & Software)
+      - item: "Strategic Advisory (10-20 hrs/week)"
+        link:
+      - item: "Full-time Contracts (40+ hrs/week)"
+        link:
+      - item: "Project-based Engagements"
+        link:
+      - item: "Available: Singapore & Global (Remote)"
         link:
 
 career-profile:
   title: Career Profile
   summary: |
-    Senior Systems Architect with 30+ years of experience delivering mission-critical systems across telecommunications, defence-grade SDR platforms, and national-scale R&D programs. Extensive background working within Singapore's A*STAR ecosystem and global telecom leaders. Proven expertise in architecting secure, high-reliability systems aligned with government, defence, and Industry 4.0 frameworks.
+    **Senior Systems Architect & Strategic Consultant** with 38+ years of proven expertise in architecting mission-critical systems across telecommunications, defence-grade SDR platforms, and national-scale R&D programs. Available for part-time advisory, full-time contracts, and project-based engagements globally and in Singapore.
 
-    **Value Proposition (Singapore Market):** Deep alignment with Singapore R&D ecosystem (A*STAR, industry collaborations); Experience in defence-oriented SDR, avionics, and secure communications systems; Strong Industry 4.0 / Smart Manufacturing expertise (RAMI 4.0, IIRA); Proven ability to lead multi-agency and multi-vendor technical programs; Eligible for advisory roles in GovTech, Defence, and national innovation programs.
+    **Consultant Value Proposition:**
+    - **30+ years** architecting complex wireless & embedded systems (5G, LTE, WCDMA, SDR, FPGA)
+    - **Deep Singapore/Asia Market Knowledge:** A*STAR ecosystem, defence collaboration, GovTech programs, smart manufacturing
+    - **End-to-End Expertise:** System architecture (INCOSE SysML), embedded Linux/RTOS, FPGA design, IIoT platforms (RAMI 4.0, IIRA)
+    - **Proven Track Record:** Led multi-disciplinary teams (16+ engineers), managed global programs, delivered field-tested systems
+    - **Current Focus:** Industry 4.0 digital transformation, private 5G/TSN solutions, secure communications architecture
+    - **Engagement Models:** Strategic advisory (10-20 hrs/week), full-time contracts, or project-based deliverables
 
 education:
   title: Education
@@ -78,12 +90,14 @@ experiences:
       details: |
         Led defence-relevant SDR and communication system architectures. Delivered IIoT platforms aligned with Singapore smart manufacturing initiatives. Acted as technical advisor across multi-stakeholder programs. Designed secure wireless and hybrid connectivity systems (LTE/5G readiness).
 
+        **Consultant/Contractor Readiness:** Experience managing multi-agency engagements, delivering advisory to government and industry partners, leading teams across organizational boundaries, and executing project-based technical architecture work for critical programs.
+
         **Key Programs:**
         - **5G for Advanced Manufacturing & Smart Urban Systems Program (System Architect):** Served as the System Architect for the A*STAR inter-institute program "5G for Advanced Manufacturing and Smart Urban Systems" (5GAMSUS). Led the architecture for industrial 5G solutions, defining use cases and technical requirements for private 5G networks in manufacturing environments.
         - **Industrial 5G & TSN Engagements:** Led subsequent industry engagement projects developing solutions for 5G and Time-Sensitive Networking (TSN) over 5G for industrial automation, enabling deterministic, low-latency wireless communication for smart factories.
         - **Wireless for Knowledge Based Manufacturing (KBM):** Technical advisor for a joint project with ARTC to develop a Smart Manufacturing/Industry 4.0 IIoT connectivity solution (wireless + wireline) for a major aircraft engine manufacturer. Incorporated Private-LTE and 5G, aligning with RAMI 4.0 and IIC IIRA.
         - **SDR based C-band Data Link for Tactical UAVs (Project Manager & Technical Lead):** Adapted a custom SDR modem to operate in the C-band (4.5-6GHz) for defence UAVs. Designed and implemented the critical time-domain equalizer.
-        - **SDR based Data Link for Tactical UAVs  (Project MaDnager & Technical Lead):** Developed a custom OFDM-based SDR modem for military UAVs (VHF/UHF/S-band). Incorporated adaptive modulation, frequency hopping, and AES256 encryption. Successfully field-tested in Australia.
+        - **SDR based Data Link for Tactical UAVs  (Project Manager & Technical Lead):** Developed a custom OFDM-based SDR modem for military UAVs (VHF/UHF/S-band). Incorporated adaptive modulation, frequency hopping, and AES256 encryption. Successfully field-tested in Australia.
         - **Reconfigurable Platform for Avionics & Communication (Technical Lead & PM):** Developed a Policy-Driven SDR platform for avionics (A*STAR Aerospace Program with Airbus). Leveraged Xilinx Virtex-5 Partial Run-time Reconfiguration.
         - **SDR based Multi-channel Intelsat Modem (Project Manager):** Developed a JTRS SCA-based SDR waveform for INTELSAT Satcomm links for a large local entity (LLE).
         - **Multi-mode SDR Terminal (Project & Technical Lead):** Led a team of ~16 engineers (collaboration with DSO) to develop a multi-mode terminal (WCDMA + 802.11a OFDM). Heavy use of MDD/MDA (Telelogic SDT, Rhapsody UML2).
@@ -92,7 +106,7 @@ experiences:
       time: Dec 1995 - July 2000
       company: Motorola Electronics Pte. Ltd, Singapore (Global Software Division / Corporate Research & Technology Centre)
       details: |
-        - **Cdma2000 1x Trial System (System Architect):** One of three system architects for a technology demonstrator for Sprint PCS inc. Defined system feature set, high-level architecture, and interface control documents.
+        - **Cdma2000 1x Trial System (System Architect):** One of three system architects for a technology demonstrator for Sprint PCS inc. Defined system feature set, high-level architecture, and interface control documents. Coordinated cross-functional global teams for major vendor programs.
         - **Cdma2000 1x Trial System BTS (Technical Lead):** Technical lead for BTS subsystems developed in Singapore.
         - **Onyx V42bis Library:** Developed an assembly-optimized V42bis compression library for Motorola 56300 DSP.
         - **FLEX & POCSAG Pager Prototypes:** Developed complete hardware/software prototypes using HC11 MCU.
@@ -118,7 +132,7 @@ experiences:
         - Developed TCXO, PLLs, VCXOs, and VHF/UHF filters for a Satellite News Dissemination System.
 
 certifications:
-  title: Awards & Certifications
+  title: Awards, Certifications & Continuing Education
   list:
     - name: EURASIP Best Paper Award
       start: 2010
@@ -129,6 +143,26 @@ certifications:
       credentialname:
       details: |
         Awarded for the paper "Reconfigurable Signal Processing and hardware Architecture for Broadband Wireless Communications" in the Journal on Wireless Communications and Networking, Volume 2005.
+
+    - name: Kotlin for Beginners - Learn Programming With Kotlin
+      start: 2024
+      end:
+      organization: Udemy
+      credentialid:
+      credentialurl:
+      credentialname:
+      details: |
+        Completed comprehensive course on Kotlin programming language, covering modern language features and best practices for mobile and backend application development.
+
+    - name: Learn Onshape for Beginners
+      start: 2024
+      end:
+      organization: Udemy
+      credentialid:
+      credentialurl:
+      credentialname:
+      details: |
+        Completed practical course on Onshape cloud-based 3D CAD platform, including parametric design and collaborative design workflows for product development.
 
 projects:
   title: Key Projects
@@ -176,9 +210,9 @@ oss:
       tagline: "Embedded Linux, RTOS (VxWorks, FreeRTOS, Custom), Kernel/Driver Development, C/C++, Python, Rust"
 
 publications:
-  title: Publications
+  title: Publications & Research Impact
   intro: |
-    Selected peer-reviewed publications and conference papers.
+    Selected peer-reviewed publications and conference papers. Full publication record available on [Google Scholar](https://scholar.google.com/citations?user=santhosh-kumar-pilakkat) (search "Santhosh Kumar Pilakkat").
   papers:
     - title: "Reconfigurable Signal Processing and hardware Architecture for Broadband Wireless Communications"
       link:
