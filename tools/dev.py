@@ -50,6 +50,9 @@ EXPECTED_RUBY_VERSION = "3.4.9"
 INTERNAL_LINK_RE = re.compile(r"\[([^\]]+)\]\(/posts/([^/)]+)/?[^)]*\)")
 
 
+INTERNAL_LINK_RE = re.compile(r"\[([^\]]+)\]\(/posts/([^/)]+)/?[^)]*\)")
+
+
 # ── Helpers ──────────────────────────────────────────────────────────────────
 
 
@@ -1958,6 +1961,55 @@ End of work:
 }
 
 
+# ── Custom Help Actions ──────────────────────────────────────────────────────
+
+
+class CustomHelpAction(argparse.Action):
+    """Custom help action that invokes the help system instead of exiting."""
+
+    def __init__(self, option_strings, dest, **kwargs):
+        super().__init__(option_strings, dest, nargs=0, **kwargs)
+
+    def __call__(self, parser, namespace, values, option_string=None):
+        """Show main help and exit."""
+        parser.print_help()
+        sys.exit(0)
+
+
+class SubcommandHelpAction(argparse.Action):
+    """Custom help action for subcommands that shows help topic if available."""
+
+    def __init__(self, option_strings, dest, command_name=None, **kwargs):
+        super().__init__(option_strings, dest, nargs=0, **kwargs)
+        self.command_name = command_name
+
+    def __call__(self, parser, namespace, values, option_string=None):
+        """Show command-specific help and exit."""
+        # If we have a command name, try to show the help topic
+        if self.command_name and self.command_name in HELP_TOPICS:
+            show_help(self.command_name)
+        else:
+            # Fall back to parser help
+            parser.print_help()
+        sys.exit(0)
+
+
+def add_help_to_parser(parser, command_name: str) -> None:
+    """Add help flag to a subcommand parser."""
+
+    # Create a custom action class with the command name bound
+    class BoundSubcommandHelpAction(SubcommandHelpAction):
+        def __init__(self, option_strings, dest, **kwargs):
+            super().__init__(option_strings, dest, command_name=command_name, **kwargs)
+
+    parser.add_argument(
+        "-h",
+        "--help",
+        action=BoundSubcommandHelpAction,
+        help=f"Show help for {command_name}",
+    )
+
+
 def show_help(topic: str = "help") -> None:
     """Show help for a specific topic or list all topics."""
     if topic == "help" or topic == "":
@@ -1998,71 +2050,91 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
+        add_help=False,  # Disable default help to use custom action
+    )
+    parser.add_argument(
+        "-h",
+        "--help",
+        action=CustomHelpAction,
+        help="Show this help message",
     )
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
 
     # Setup command
-    subparsers.add_parser("setup", help="Setup mise, Ruby, and gems")
+    setup_parser = subparsers.add_parser("setup", help="Setup mise, Ruby, and gems", add_help=False)
+    add_help_to_parser(setup_parser, "setup")
 
     # Serve command
-    serve_parser = subparsers.add_parser("serve", help="Start Jekyll dev server")
+    serve_parser = subparsers.add_parser("serve", help="Start Jekyll dev server", add_help=False)
     serve_parser.add_argument("--host", help="Host to bind to (default: 127.0.0.1)")
+    add_help_to_parser(serve_parser, "serve")
 
     # Build command
-    build_parser = subparsers.add_parser("build", help="Clean build the site")
+    build_parser = subparsers.add_parser("build", help="Clean build the site", add_help=False)
     build_parser.add_argument(
-        "--production",
-        action="store_true",
-        help="Build in production mode",
+         "--production",
+         action="store_true",
+         help="Build in production mode",
     )
+    add_help_to_parser(build_parser, "build")
 
     # Test command
-    subparsers.add_parser("test", help="Build and run htmlproofer")
+    test_parser = subparsers.add_parser("test", help="Build and run htmlproofer", add_help=False)
+    add_help_to_parser(test_parser, "test")
 
     # Check command
-    check_parser = subparsers.add_parser("check", help="Check internal links")
+    check_parser = subparsers.add_parser("check", help="Check internal links", add_help=False)
     check_parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Show what would change without modifying files",
+         "--dry-run",
+         action="store_true",
+         help="Show what would change without modifying files",
     )
     check_parser.add_argument(
-        "--htmlproofer",
-        action="store_true",
-        help="Also run a clean build + htmlproofer",
+         "--htmlproofer",
+         action="store_true",
+         help="Also run a clean build + htmlproofer",
     )
+    add_help_to_parser(check_parser, "check")
 
     # Branch management commands
-    feature_parser = subparsers.add_parser("feature", help="Create feature branch")
+    feature_parser = subparsers.add_parser("feature", help="Create feature branch", add_help=False)
     feature_parser.add_argument("name", help="Feature name (e.g., 'add-dark-mode')")
+    add_help_to_parser(feature_parser, "feature")
 
-    bugfix_parser = subparsers.add_parser("bugfix", help="Create bugfix branch")
+    bugfix_parser = subparsers.add_parser("bugfix", help="Create bugfix branch", add_help=False)
     bugfix_parser.add_argument("name", help="Bug name (e.g., 'fix-link-colors')")
+    add_help_to_parser(bugfix_parser, "bugfix")
 
-    switch_parser = subparsers.add_parser("switch", help="Switch to existing branch")
+    switch_parser = subparsers.add_parser("switch", help="Switch to existing branch", add_help=False)
     switch_parser.add_argument("branch", help="Branch name")
+    add_help_to_parser(switch_parser, "switch")
 
-    commit_parser = subparsers.add_parser("commit", help="Commit staged changes")
+    commit_parser = subparsers.add_parser("commit", help="Commit staged changes", add_help=False)
     commit_parser.add_argument("-m", "--message", required=True, help="Commit message")
+    add_help_to_parser(commit_parser, "commit")
 
-    merge_parser = subparsers.add_parser("merge", help="Merge current branch to main")
+    merge_parser = subparsers.add_parser("merge", help="Merge current branch to main", add_help=False)
+    add_help_to_parser(merge_parser, "merge")
 
-    delete_parser = subparsers.add_parser("delete", help="Delete a local branch")
+    delete_parser = subparsers.add_parser("delete", help="Delete a local branch", add_help=False)
     delete_parser.add_argument("branch", help="Branch name to delete")
     delete_parser.add_argument(
          "-f", "--force", action="store_true", help="Force delete (use -D instead of -d)"
     )
+    add_help_to_parser(delete_parser, "delete")
 
-    status_parser = subparsers.add_parser("status", help="Show git status")
+    status_parser = subparsers.add_parser("status", help="Show git status", add_help=False)
+    add_help_to_parser(status_parser, "status")
 
     # Help command
-    help_parser = subparsers.add_parser("help", help="Show help for a topic")
+    help_parser = subparsers.add_parser("help", help="Show help for a topic", add_help=False)
     help_parser.add_argument(
          "topic",
          nargs="?",
          default="help",
          help="Help topic (use 'help' alone for list of topics)",
     )
+    add_help_to_parser(help_parser, "help")
 
     args = parser.parse_args()
 
@@ -2094,9 +2166,9 @@ def main() -> None:
     elif args.command == "delete":
         cmd_delete(args)
     elif args.command == "status":
-         cmd_status()
+        cmd_status()
     elif args.command == "help":
-         show_help(args.topic)
+        show_help(args.topic)
 
 
 if __name__ == "__main__":
