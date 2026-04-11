@@ -33,6 +33,7 @@ compress_html: # - http://jch.penibelst.de/
 exclude:
   - README.md
   - LICENSE
+  - DEVELOPMENT.md
   - mise.toml
   - tools
   - Gemfile
